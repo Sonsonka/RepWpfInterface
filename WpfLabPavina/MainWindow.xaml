@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfLabPavina.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLabPavina"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        x:Name="window">
+    <Window.Resources>
+        <Style TargetType="MenuItem" x:Key="MenuButton">
+            <Setter Property="Background" Value="Aquamarine"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="CornflowerBlue"/>
+        </Style>
+        <Style TargetType="MenuItem" x:Key="ItemStyle">
+            <Setter Property="Background" Value="Aquamarine"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="CornflowerBlue"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Menu Background="White" BorderBrush="Navy" BorderThickness="1" Grid.Row="0">
+                <MenuItem Header="Меню" Style="{StaticResource MenuButton}">
+                    <MenuItem Header="Цвет фона">
+                        <MenuItem  Header="Розовый" Name="color1" Click="MenuItem_Click" MouseEnter="MenuItem_MouseEnter"/>
+                        <MenuItem Header="Оранжевый" Name="color2" Click="MenuItem_Click_1" MouseEnter="MenuItem_MouseEnter_1"/>
+                        <MenuItem Header="Зелёный" Name="color3" Click="MenuItem_Click_2" MouseEnter="MenuItem_MouseEnter_2"/>
+                    </MenuItem>
+                    <MenuItem Header="Информация о разработчике" Click="MenuItem_Click_3" x:Name="razrab" MouseEnter="razrab_MouseEnter"/>
+                    <Separator />
+                    <MenuItem Header="Закрыть" Name="close" Click="MenuItem_Click_4" MouseEnter="MenuItem_MouseEnter_3"/>
+                </MenuItem>
+            </Menu>
+
+            <ToolBar Height="120" Width="380" Grid.Row="0" HorizontalAlignment="Left">
+                <ComboBox  Height="130" Width="130">
+                    <ComboBoxItem IsSelected="True">
+                        <StackPanel>
+                            <Button Click="Button_Click_3" Name="pink" MouseEnter="Button_MouseEnter">
+                                <Image Source="https://cdn-icons-png.flaticon.com/512/4219/4219827.png" Height="100" Width="100" ></Image>
+                            </Button>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <StackPanel>
+                        <Button Click="Button_Click_4" Name="orange" MouseEnter="Button_MouseEnter_1">
+                            <Image Source="Image/cat.png" Height="100" Width="100" ></Image>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Click="Button_Click" Name="green" MouseEnter="Button_MouseEnter_2">
+                            <Image Source="Image/cat2.png" Height="100" Width="100" ></Image>
+                        </Button>
+                    </StackPanel>
+                </ComboBox>
+
+                <Button Click="Button_Click_1" Name="auphtor" MouseEnter="Button_MouseEnter_3" >
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/763/763724.png" Height="100"  Width="100" ></Image>
+                </Button>
+                <Button Click="Button_Click_2" Name="bye" MouseEnter="Button_MouseEnter_4">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/1581/1581594.png" Height="100"  Width="100" ></Image>
+                </Button>
+            </ToolBar>
+        </StackPanel>
+        <StatusBar Grid.Row="2" Height="25">
+            <StatusBarItem>
+                <TextBlock Name="status" Margin="10,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
